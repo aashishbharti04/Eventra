@@ -28,7 +28,7 @@ if (!$db_offline) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><?php echo htmlspecialchars($cat['name']); ?> &mdash; CEMS</title>
+    <title><?php echo htmlspecialchars($cat['name']); ?> &mdash; Eventra</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -79,8 +79,8 @@ if (!$db_offline) {
                                 <div><i class="bi bi-person-badge"></i> Staff lead: <?php echo $staffC; ?></div>
                             </div>
                             <div class="actions">
-                                <a href="register.php" class="btn btn-cems"><i class="bi bi-bookmark-plus"></i> Register</a>
-                                <a href="index.php#events" class="btn btn-cems-ghost"><i class="bi bi-arrow-left"></i> Back</a>
+                                <a href="register.php" class="btn btn-app"><i class="bi bi-bookmark-plus"></i> Register</a>
+                                <a href="index.php#events" class="btn btn-app-ghost"><i class="bi bi-arrow-left"></i> Back</a>
                             </div>
                         </div>
                     </article>
@@ -90,7 +90,7 @@ if (!$db_offline) {
         <?php endif; ?>
 
         <div class="mt-4">
-            <a href="index.php" class="btn btn-cems-ghost"><i class="bi bi-arrow-left"></i> All categories</a>
+            <a href="index.php" class="btn btn-app-ghost"><i class="bi bi-arrow-left"></i> All categories</a>
         </div>
     </div>
 </section>

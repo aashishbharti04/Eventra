@@ -11,7 +11,7 @@ if (!$db_offline) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Student Registrations &mdash; CEMS Admin</title>
+    <title>Student Registrations &mdash; Eventra Admin</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -29,13 +29,13 @@ if (!$db_offline) {
     <div class="container">
         <?php if ($db_offline) echo db_offline_banner($db_last_error); ?>
 
-        <div class="cems-table-wrap">
+        <div class="app-table-wrap">
             <div class="p-3" style="border-bottom:1px solid var(--border);background:var(--surface-2);">
                 <h3 class="m-0" style="font-size:1.05rem;">All registered students &mdash; <?php echo count($rows); ?> records</h3>
             </div>
             <?php if (!empty($rows)): ?>
             <div class="table-responsive">
-                <table class="cems-table">
+                <table class="app-table">
                     <thead><tr>
                         <th>USN</th><th>Name</th><th>Branch</th><th>Sem</th>
                         <th>Email</th><th>Phone</th><th>College</th><th>Event</th>

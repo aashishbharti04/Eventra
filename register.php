@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Register &mdash; CEMS</title>
+    <title>Register &mdash; Eventra</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -56,8 +56,8 @@
                                 <input type="text" name="college" class="form-control" required placeholder="Your college name">
                             </div>
                             <div class="col-12 d-flex gap-2 flex-wrap mt-2">
-                                <button type="submit" name="update" class="btn btn-cems"><i class="bi bi-check2-circle"></i> Submit registration</button>
-                                <a href="usn.php" class="btn btn-cems-ghost"><i class="bi bi-search"></i> Already registered?</a>
+                                <button type="submit" name="update" class="btn btn-app"><i class="bi bi-check2-circle"></i> Submit registration</button>
+                                <a href="usn.php" class="btn btn-app-ghost"><i class="bi bi-search"></i> Already registered?</a>
                             </div>
                         </div>
                     </form>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Login &mdash; CEMS</title>
+    <title>Admin Login &mdash; Eventra</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -13,7 +13,7 @@
     <div class="container">
         <div class="crumbs"><a href="index.php">Home</a> &nbsp;/&nbsp; Admin Login</div>
         <h1><i class="bi bi-shield-lock"></i> Admin Login</h1>
-        <p class="text-white-50">Restricted area &mdash; for the CEMS admin console.</p>
+        <p class="text-white-50">Restricted area &mdash; for the Eventra Admin console.</p>
     </div>
 </section>
 
@@ -34,7 +34,7 @@
                             <label class="form-label">Password</label>
                             <input type="password" name="password" class="form-control" required autocomplete="current-password" placeholder="••••••••">
                         </div>
-                        <button type="submit" name="update" class="btn btn-cems w-100"><i class="bi bi-box-arrow-in-right"></i> Sign in</button>
+                        <button type="submit" name="update" class="btn btn-app w-100"><i class="bi bi-box-arrow-in-right"></i> Sign in</button>
                     </form>
 
                     <div class="banner-info mt-3 mb-0">

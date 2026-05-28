@@ -11,7 +11,7 @@ if (!$db_offline) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Staff Coordinators &mdash; CEMS Admin</title>
+    <title>Staff Coordinators &mdash; Eventra Admin</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -29,13 +29,13 @@ if (!$db_offline) {
     <div class="container">
         <?php if ($db_offline) echo db_offline_banner($db_last_error); ?>
 
-        <div class="cems-table-wrap">
+        <div class="app-table-wrap">
             <div class="p-3" style="border-bottom:1px solid var(--border);background:var(--surface-2);">
                 <h3 class="m-0" style="font-size:1.05rem;">Staff coordinators &mdash; <?php echo count($rows); ?> records</h3>
             </div>
             <?php if (!empty($rows)): ?>
             <div class="table-responsive">
-                <table class="cems-table">
+                <table class="app-table">
                     <thead><tr><th>Name</th><th>Phone</th><th>Event</th><th></th></tr></thead>
                     <tbody>
                     <?php foreach ($rows as $row): ?>
@@ -43,7 +43,7 @@ if (!$db_offline) {
                             <td><b><?php echo htmlspecialchars($row['name']); ?></b></td>
                             <td><?php echo htmlspecialchars($row['phone'] ?? '—'); ?></td>
                             <td><?php echo htmlspecialchars($row['event_title']); ?></td>
-                            <td><a class="btn btn-cems-ghost btn-sm" href="updateStaff.php?id=<?php echo (int)$row['event_id']; ?>"><i class="bi bi-pencil"></i> Update</a></td>
+                            <td><a class="btn btn-app-ghost btn-sm" href="updateStaff.php?id=<?php echo (int)$row['event_id']; ?>"><i class="bi bi-pencil"></i> Update</a></td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>

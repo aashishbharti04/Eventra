@@ -31,7 +31,7 @@ if (!$db_offline) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Admin Dashboard &mdash; CEMS</title>
+    <title>Admin Dashboard &mdash; Eventra</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -84,25 +84,25 @@ if (!$db_offline) {
 
         <!-- Actions row -->
         <div class="d-flex flex-wrap gap-2 mb-4">
-            <a href="createEventForm.php" class="btn btn-cems"><i class="bi bi-plus-circle"></i> Create new event</a>
-            <a href="Stu_details.php" class="btn btn-cems-ghost"><i class="bi bi-people"></i> View students</a>
-            <a href="Stu_cordinator.php" class="btn btn-cems-ghost"><i class="bi bi-person-badge"></i> Student coordinators</a>
-            <a href="Staff_cordinator.php" class="btn btn-cems-ghost"><i class="bi bi-person-vcard"></i> Staff coordinators</a>
+            <a href="createEventForm.php" class="btn btn-app"><i class="bi bi-plus-circle"></i> Create new event</a>
+            <a href="Stu_details.php" class="btn btn-app-ghost"><i class="bi bi-people"></i> View students</a>
+            <a href="Stu_cordinator.php" class="btn btn-app-ghost"><i class="bi bi-person-badge"></i> Student coordinators</a>
+            <a href="Staff_cordinator.php" class="btn btn-app-ghost"><i class="bi bi-person-vcard"></i> Staff coordinators</a>
         </div>
 
         <!-- Events table -->
-        <div class="cems-table-wrap">
+        <div class="app-table-wrap">
             <div class="d-flex justify-content-between align-items-center p-3" style="border-bottom:1px solid var(--border);background:var(--surface-2);">
                 <div>
                     <h3 class="m-0" style="font-size:1.05rem;">All events</h3>
                     <small class="text-muted-2">Full list with date, time, venue and coordinators.</small>
                 </div>
-                <a href="createEventForm.php" class="btn btn-cems-accent btn-sm"><i class="bi bi-plus"></i> Add event</a>
+                <a href="createEventForm.php" class="btn btn-app-accent btn-sm"><i class="bi bi-plus"></i> Add event</a>
             </div>
 
             <?php if (!empty($rows)): ?>
             <div class="table-responsive">
-                <table class="cems-table">
+                <table class="app-table">
                     <thead>
                         <tr>
                             <th>Event</th>

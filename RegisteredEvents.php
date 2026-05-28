@@ -23,7 +23,7 @@ if (!$db_offline && $usn !== '') {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Registered Events &mdash; CEMS</title>
+    <title>Registered Events &mdash; Eventra</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -47,12 +47,12 @@ if (!$db_offline && $usn !== '') {
                 <a href="register.php" class="ms-2"><b>Register now &rarr;</b></a>
             </div>
         <?php else: ?>
-            <div class="cems-table-wrap">
+            <div class="app-table-wrap">
                 <div class="p-3" style="border-bottom:1px solid var(--border);background:var(--surface-2);">
                     <h3 class="m-0" style="font-size:1.05rem;"><?php echo count($rows); ?> event(s) found</h3>
                 </div>
                 <div class="table-responsive">
-                    <table class="cems-table">
+                    <table class="app-table">
                         <thead><tr>
                             <th>Event</th><th>Student coord.</th><th>Staff coord.</th>
                             <th>Date</th><th>Time</th><th>Location</th>
@@ -75,8 +75,8 @@ if (!$db_offline && $usn !== '') {
         <?php endif; ?>
 
         <div class="mt-4 d-flex gap-2 flex-wrap">
-            <a href="usn.php" class="btn btn-cems-ghost"><i class="bi bi-arrow-left"></i> Look up another USN</a>
-            <a href="index.php#events" class="btn btn-cems"><i class="bi bi-plus-circle"></i> Register for more events</a>
+            <a href="usn.php" class="btn btn-app-ghost"><i class="bi bi-arrow-left"></i> Look up another USN</a>
+            <a href="index.php#events" class="btn btn-app"><i class="bi bi-plus-circle"></i> Register for more events</a>
         </div>
     </div>
 </section>

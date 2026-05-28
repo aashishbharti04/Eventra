@@ -1,53 +1,109 @@
-# CEMS — College Event Management System
+<div align="center">
 
-> A modern, professional event-management portal for college fests.
-> Designed and built end-to-end by **Aashish**.
+# 🎉 Eventra
 
-[![Made with PHP](https://img.shields.io/badge/Made%20with-PHP%208-777BB4?logo=php&logoColor=white)](https://www.php.net/)
-[![Bootstrap 5](https://img.shields.io/badge/UI-Bootstrap%205-7952B3?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
-[![MySQL](https://img.shields.io/badge/DB-MySQL%20%2F%20MariaDB-4479A1?logo=mysql&logoColor=white)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/license-MIT-22c55e)](#license)
+### The student-first event platform for modern colleges.
 
----
+A modern, **open-source** event management platform — discover events, register, coordinate, and run a world-class college fest without breaking a sweat.
 
-## What is CEMS?
+[![License: MIT](https://img.shields.io/badge/License-MIT-22c55e.svg?style=for-the-badge)](LICENSE)
+[![Free for College Projects](https://img.shields.io/badge/Free%20for-College%20Projects-7c3aed?style=for-the-badge)](#-free-for-college-projects)
+[![PHP](https://img.shields.io/badge/Built%20with-PHP%208-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![Bootstrap 5](https://img.shields.io/badge/UI-Bootstrap%205-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
+[![MySQL](https://img.shields.io/badge/DB-MySQL%20%2F%20MariaDB-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/)
+[![Dark Mode](https://img.shields.io/badge/Dark%20Mode-Yes-0b1120?style=for-the-badge)](#-features)
+[![Made by Aashish](https://img.shields.io/badge/Made%20by-Aashish-f97316?style=for-the-badge)](#-owner--maintainer)
 
-CEMS is a full-stack web application that lets a college:
-
-- **Discover** events across four categories — Technical, Gaming, On-Stage, Off-Stage.
-- **Register** students with USN, branch, contact and college details.
-- **Coordinate** events through a dedicated admin console — staff & student coordinators, schedule, location.
-- **Look up** registrations by USN ("My Events" page).
-- **Manage** every event end-to-end from a clean admin dashboard.
-
-The UI was rebuilt from the ground up: hero, animated stat cards, image-driven category grid, modern forms, responsive tables, and a polished footer with full owner branding.
+</div>
 
 ---
 
-## Tech stack
+## 💜 Free for college projects
 
-| Layer        | Tech                                    |
-| ------------ | --------------------------------------- |
-| Backend      | PHP 8 (mysqli)                          |
-| Database     | MySQL / MariaDB (schema in `cems.sql`)  |
+> **Eventra is 100% free and open source. Use it for your college mini-project, major-project, fest, hackathon submission, or even your college's official event portal — for free, forever. Fork it, deploy it, rebrand it, submit it. No strings attached.**
+
+If Eventra helps you land an A+, **a ⭐ on this repo is the only thanks I'll ever ask for.** 🚀
+
+---
+
+## ✨ Features
+
+- **Modern, polished UI** — purple + coral gradient theme, asymmetric hero, glassmorphism navbar
+- **🌙 Dark mode** — built-in toggle, remembers your choice, respects OS preference
+- **⏱️ Live countdown** to the next big event on the homepage
+- **Featured event** strip on home
+- **Gallery page** — masonry layout of past events
+- **FAQ accordion** — answers the common student/organiser questions
+- **Sponsors page** — three-tier sponsorship cards (Bronze / Silver / Gold)
+- **Testimonials, stats strip, newsletter signup** — full marketing-site polish
+- **Admin dashboard** — KPI tiles, full events table, quick actions
+- **Role-aware flows** — student, student coordinator, staff coordinator, admin
+- **My Events lookup** — students find their registered events by USN
+- **DB-offline friendly** — preview the whole site even without MySQL connected
+- **Mobile-first responsive** — every page works on phones, tablets, desktops
+- **404 page** — branded, helpful, doesn't dead-end users
+- **Mailto-fallback forms** — contact and newsletter work without a mail server
+
+---
+
+## 🛠️ Tech stack
+
+| Layer        | Tech                                              |
+| ------------ | ------------------------------------------------- |
+| Backend      | PHP 8 (mysqli)                                    |
+| Database     | MySQL / MariaDB (schema in `cems.sql`)            |
 | Frontend     | Bootstrap 5.3 + Bootstrap Icons + custom CSS theme (`css/app.css`) |
-| Fonts        | Inter (Google Fonts)                    |
-| Imagery      | Unsplash CDN (free, hotlinkable)        |
+| Fonts        | Plus Jakarta Sans (Google Fonts)                  |
+| Imagery      | Unsplash CDN (free, hotlinkable)                  |
+| Build        | **None.** No Node, no webpack, no bundler.        |
 
 ---
 
-## Folder structure
+## 🚀 Quick start (10 minutes)
+
+### Option A — Full stack (recommended)
+
+1. Install **XAMPP / WAMP / Laragon** (any LAMP-style bundle).
+2. Drop this project into your web root (e.g. `htdocs/`).
+3. Open **phpMyAdmin** → create a database named `cems` → **Import** `cems.sql`.
+4. Visit <http://localhost/Eventra/> (or whatever folder name you used).
+
+### Option B — PHP only (preview without DB)
+
+```bash
+# from the project root
+php -S localhost:8000
+```
+
+Open <http://localhost:8000>. Static pages render perfectly. Pages that need MySQL show a friendly "Database not connected" banner instead of a fatal error.
+
+---
+
+## 🔑 Default credentials
+
+| Role  | Username | Password |
+| ----- | -------- | -------- |
+| Admin | `admin`  | `admin`  |
+
+> **Important:** change these in `login_form.php` before deploying to a public server.
+
+---
+
+## 📁 Folder structure
 
 ```
 .
-├── index.php                 # Home (hero, stats, categories, CTA)
+├── index.php                 # Home (hero + countdown, stats, categories, featured, testimonials, newsletter)
 ├── aboutus.php               # About + owner card
 ├── contact.php               # Owner contact + message form
+├── gallery.php               # Past-events masonry gallery
+├── faq.php                   # FAQ accordion
+├── sponsors.php              # Sponsorship tiers + partner crews
 ├── register.php              # Student registration
 ├── usn.php                   # "Find my events" lookup
 ├── RegisteredEvents.php      # Per-USN event list
 ├── login_form.php            # Admin login
-├── adminPage.php             # Admin dashboard (stats + events table)
+├── adminPage.php             # Admin dashboard (KPI tiles + events table)
 ├── createEventForm.php       # Create event
 ├── deleteEvent.php           # Delete event
 ├── Stu_details.php           # All student registrations
@@ -61,73 +117,55 @@ The UI was rebuilt from the ground up: hero, animated stat cards, image-driven c
 ├── cems.sql                  # Database schema + seed data
 ├── classes/db1.php           # DB connection (non-fatal on failure)
 ├── utils/
-│   ├── styles.php            # Shared <head> (Bootstrap + theme)
-│   ├── header.php            # Public navbar + topbar
+│   ├── styles.php            # Shared <head> (Bootstrap + theme + dark-mode init)
+│   ├── header.php            # Public navbar + topbar + theme toggle
 │   ├── adminHeader.php       # Admin navbar
-│   └── footer.php            # Global footer with social links
-├── css/
-│   ├── app.css               # Custom theme (this is where the look lives)
-│   ├── bootstrap.css         # legacy — no longer used
-│   └── style.css             # legacy — no longer used
-├── images/                   # legacy local images
+│   └── footer.php            # Global footer with social links + scripts
+├── css/app.css               # Custom theme (the entire look lives here)
+├── LICENSE                   # MIT
 └── README.md
 ```
 
 ---
 
-## Quick start (local)
+## 🎨 Make it your own
 
-### Option A — Full stack (recommended)
+1. **Rename the brand** — change `Eventra` in `utils/header.php`, `utils/footer.php`, and the `<title>` of each page.
+2. **Recolour** — edit the CSS variables at the top of `css/app.css` (look for `:root`).
+3. **Swap the logo mark** — the inline SVG is in `utils/styles.php` (`<link rel="icon">`).
+4. **Replace event images** — point `img_link` in `cems.sql` at your own URLs, or change the Unsplash URLs in `index.php`.
 
-1. Install **XAMPP / WAMP / Laragon** (any LAMP-style bundle).
-2. Drop this project into your web root (`htdocs/` for XAMPP).
-3. Open **phpMyAdmin** → create a database named `cems` → **Import** `cems.sql`.
-4. Visit <http://localhost/College-Event-Management-System-master/>
-
-### Option B — PHP only (preview without DB)
-
-```powershell
-# from the project root
-php -S localhost:8000
-```
-
-Open <http://localhost:8000>. Static pages (Home / About / Contact / Login / Register form) render perfectly. Pages that need MySQL show a friendly "Database not connected" banner instead of a fatal error.
+That's it. No build step, no compile — refresh the page and you're done.
 
 ---
 
-## Default credentials
+## 👤 Owner & Maintainer
 
-| Role  | Username | Password |
-| ----- | -------- | -------- |
-| Admin | `admin`  | `admin`  |
+Built and maintained with care by **Aashish**.
 
-> Change these for any non-demo deployment.
-
----
-
-## Screens
-
-- **Home** — hero with live status pill, KPI stat cards, image-rich category grid, 3-step "How it works", CTA section.
-- **About** — owner card (avatar, bio, socials) + mission grid.
-- **Contact** — owner contact card (email, phone, location) + message form with mailto fallback.
-- **Admin dashboard** — 4 KPI tiles, quick-actions, full events table with delete.
-- **Events listing** — responsive event cards with image, price pill, schedule, coordinators.
+| Channel    | Link                                                                 |
+| ---------- | -------------------------------------------------------------------- |
+| 📧 Email   | <aashish@marketdoctorsonline.com>                                    |
+| 📱 Phone   | **+91 95652 63445**                                                  |
+| 🐙 GitHub  | [@aashishbharti04](https://github.com/aashishbharti04)               |
+| 💼 LinkedIn| [aashana1012](https://in.linkedin.com/in/aashana1012)                |
+| ▶️ YouTube | [@CodeWithAsur](https://www.youtube.com/@CodeWithAsur)               |
+| 📸 Instagram | [@asurwave1012](https://www.instagram.com/asurwave1012)            |
 
 ---
 
-## Owner & contact
+## 🤝 Contributing
 
-Built and maintained by **Aashish**.
-
-- 📧 Email: <aashish@marketdoctorsonline.com>
-- 📱 Phone / WhatsApp: **+91 95652 63445**
-- 🐙 GitHub: <https://github.com/aashishbharti04>
-- 💼 LinkedIn: <https://in.linkedin.com/in/aashana1012>
-- ▶️ YouTube: <https://www.youtube.com/@CodeWithAsur>
-- 📸 Instagram: <https://www.instagram.com/asurwave1012>
+PRs welcome. Bug reports, feature requests, theme variants, translations — all appreciated. Open an issue first if it's a big change so we can align.
 
 ---
 
-## License
+## 📜 License
 
-MIT © Aashish. Free to fork, deploy and adapt for your college.
+[MIT](LICENSE) © Aashish. Free to fork, deploy, rebrand and submit. Use it for your college project — that's literally what it's for.
+
+<div align="center">
+
+If Eventra helped you, drop a ⭐ — it costs nothing and means a lot. 💜
+
+</div>

@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>My Events &mdash; CEMS</title>
+    <title>My Events &mdash; Eventra</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -29,7 +29,7 @@
                             <label class="form-label">Student USN</label>
                             <input type="text" id="usn" name="usn" class="form-control" required placeholder="e.g. 1XX21CS001">
                         </div>
-                        <button type="submit" class="btn btn-cems w-100"><i class="bi bi-search"></i> Show my events</button>
+                        <button type="submit" class="btn btn-app w-100"><i class="bi bi-search"></i> Show my events</button>
                     </form>
                     <p class="mt-3 mb-0 text-muted-2 small">Not registered yet? <a href="register.php"><b>Create your participant profile</b></a>.</p>
                 </div>

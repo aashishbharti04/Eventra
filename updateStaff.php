@@ -6,7 +6,7 @@ $id = $_GET['id'] ?? 0;
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Update Staff Coordinator &mdash; CEMS Admin</title>
+    <title>Update Staff Coordinator &mdash; Eventra Admin</title>
     <?php require 'utils/styles.php'; ?>
 </head>
 <body>
@@ -34,8 +34,8 @@ $id = $_GET['id'] ?? 0;
                             <label class="form-label">Phone</label>
                             <input type="tel" name="phone" class="form-control" required>
                         </div>
-                        <button type="submit" name="update" class="btn btn-cems"><i class="bi bi-save"></i> Save changes</button>
-                        <a href="Staff_cordinator.php" class="btn btn-cems-ghost"><i class="bi bi-arrow-left"></i> Back</a>
+                        <button type="submit" name="update" class="btn btn-app"><i class="bi bi-save"></i> Save changes</button>
+                        <a href="Staff_cordinator.php" class="btn btn-app-ghost"><i class="bi bi-arrow-left"></i> Back</a>
                     </form>
                 </div>
             </div>

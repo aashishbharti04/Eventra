@@ -4,15 +4,15 @@ $page = $page ?? '';
 ?>
 <div class="topbar">
     <div class="container d-flex justify-content-between align-items-center">
-        <div><i class="bi bi-shield-check me-1"></i> Admin console &mdash; CEMS</div>
+        <div><span class="pill">Admin</span> <i class="bi bi-shield-check me-1"></i> Eventra console</div>
         <div>Logged in as <b>admin</b> &middot; <a href="index.php"><i class="bi bi-box-arrow-right me-1"></i>Exit to site</a></div>
     </div>
 </div>
-<nav class="cems-nav navbar navbar-expand-lg">
+<nav class="app-nav navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand cems-brand" href="adminPage.php">
-            <span class="logo-mark">A</span>
-            <span>CEMS Admin
+        <a class="navbar-brand app-brand" href="adminPage.php">
+            <span class="logo-mark">E</span>
+            <span>Eventra Admin
                 <small>by Aashish</small>
             </span>
         </a>
@@ -26,7 +26,13 @@ $page = $page ?? '';
                 <li class="nav-item"><a class="nav-link <?php echo $page==='scoord'?'active':''; ?>" href="Stu_cordinator.php"><i class="bi bi-person-badge me-1"></i>Student Coord.</a></li>
                 <li class="nav-item"><a class="nav-link <?php echo $page==='stcoord'?'active':''; ?>" href="Staff_cordinator.php"><i class="bi bi-person-vcard me-1"></i>Staff Coord.</a></li>
                 <li class="nav-item"><a class="nav-link" href="createEventForm.php"><i class="bi bi-plus-circle me-1"></i>New Event</a></li>
-                <li class="nav-item ms-lg-2"><a class="btn btn-cems-ghost" href="index.php"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
+                <li class="nav-item ms-lg-2"><a class="btn btn-app-ghost" href="index.php"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
+                <li class="nav-item ms-lg-2">
+                    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="bi bi-moon-stars-fill"></i>
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                </li>
             </ul>
         </div>
     </div>

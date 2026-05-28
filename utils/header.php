@@ -5,6 +5,7 @@ $page = $page ?? '';
 <div class="topbar d-none d-md-block">
     <div class="container d-flex justify-content-between align-items-center">
         <div>
+            <span class="pill">Open Source</span>
             <i class="bi bi-envelope-fill me-1"></i>
             <a href="mailto:aashish@marketdoctorsonline.com">aashish@marketdoctorsonline.com</a>
             <span class="sep">|</span>
@@ -22,26 +23,33 @@ $page = $page ?? '';
         </div>
     </div>
 </div>
-<nav class="cems-nav navbar navbar-expand-lg">
+<nav class="app-nav navbar navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand cems-brand" href="index.php">
-            <span class="logo-mark">A</span>
-            <span>CEMS
+        <a class="navbar-brand app-brand" href="index.php">
+            <span class="logo-mark">E</span>
+            <span>Eventra
                 <small>by Aashish</small>
             </span>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#cemsNav" aria-controls="cemsNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="cemsNav">
+        <div class="collapse navbar-collapse" id="mainNav">
             <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
-                <li class="nav-item"><a class="nav-link <?php echo $page==='home'?'active':''; ?>" href="index.php"><i class="bi bi-house-door me-1"></i>Home</a></li>
-                <li class="nav-item"><a class="nav-link <?php echo $page==='events'?'active':''; ?>" href="index.php#events"><i class="bi bi-calendar-event me-1"></i>Events</a></li>
-                <li class="nav-item"><a class="nav-link <?php echo $page==='register'?'active':''; ?>" href="register.php"><i class="bi bi-person-plus me-1"></i>Register</a></li>
-                <li class="nav-item"><a class="nav-link <?php echo $page==='myevents'?'active':''; ?>" href="usn.php"><i class="bi bi-bookmark-check me-1"></i>My Events</a></li>
-                <li class="nav-item"><a class="nav-link <?php echo $page==='about'?'active':''; ?>" href="aboutus.php"><i class="bi bi-info-circle me-1"></i>About</a></li>
-                <li class="nav-item"><a class="nav-link <?php echo $page==='contact'?'active':''; ?>" href="contact.php"><i class="bi bi-chat-dots me-1"></i>Contact</a></li>
-                <li class="nav-item ms-lg-2"><a class="btn btn-cems" href="login_form.php"><i class="bi bi-shield-lock"></i>Admin Login</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='home'?'active':''; ?>" href="index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='events'?'active':''; ?>" href="index.php#events">Events</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='gallery'?'active':''; ?>" href="gallery.php">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='faq'?'active':''; ?>" href="faq.php">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='sponsors'?'active':''; ?>" href="sponsors.php">Sponsors</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='about'?'active':''; ?>" href="aboutus.php">About</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='contact'?'active':''; ?>" href="contact.php">Contact</a></li>
+                <li class="nav-item ms-lg-2"><a class="btn btn-app" href="register.php"><i class="bi bi-rocket-takeoff"></i> Register</a></li>
+                <li class="nav-item ms-lg-2">
+                    <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">
+                        <i class="bi bi-moon-stars-fill"></i>
+                        <i class="bi bi-sun-fill"></i>
+                    </button>
+                </li>
             </ul>
         </div>
     </div>

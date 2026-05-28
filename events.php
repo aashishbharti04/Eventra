@@ -28,7 +28,7 @@ $stfC  = htmlspecialchars($row['name']           ?? '');
                     <div><i class="bi bi-person-badge"></i> Staff lead: <?php echo $stfC; ?></div>
                 </div>
                 <div class="actions">
-                    <a href="register.php" class="btn btn-cems"><i class="bi bi-bookmark-plus"></i> Register</a>
+                    <a href="register.php" class="btn btn-app"><i class="bi bi-bookmark-plus"></i> Register</a>
                 </div>
             </div>
         </div>
