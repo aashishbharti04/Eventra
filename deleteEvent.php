@@ -1,5 +1,6 @@
 <?php
 require 'classes/db1.php';
+require_once 'classes/EventStore.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
@@ -8,16 +9,9 @@ if ($db_offline) {
     exit;
 }
 
-$sql  = "delete from events where event_id='$id';";
-$sql .= "delete from event_info where event_id='$id';";
-$sql .= "delete from staff_coordinator where event_id='$id';";
-$sql .= "delete from student_coordinator where event_id='$id';";
-$sql .= "delete from registered where event_id='$id'";
-
-if ($conn->multi_query($sql) === True) {
+if (EventStore::deleteEvent($id)) {
     echo "<script>alert('Event deleted successfully'); window.location.href='adminPage.php';</script>";
 } else {
-    echo "Error deleting record: " . $conn->error;
+    echo "<script>alert('Error deleting event.'); window.location.href='adminPage.php';</script>";
 }
-$conn->close();
 ?>

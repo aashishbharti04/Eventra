@@ -84,7 +84,20 @@ if (isset($_POST["update"])) {
     if (!empty($usn) && !empty($name) && !empty($branch) && !empty($sem) && !empty($email) && !empty($phone) && !empty($college)) {
         include 'classes/db1.php';
         if ($db_offline) {
-            echo "<script>alert('Database not connected. Start MySQL and import cems.sql.'); window.location.href='register.php';</script>";
+            echo "<script>alert('Database not connected. Configure MySQL or Supabase on the Settings page.'); window.location.href='register.php';</script>";
+        } elseif ($supabase) {
+            $supabase->insert('participent', [
+                'usn'     => $usn,
+                'name'    => $name,
+                'branch'  => $branch,
+                'sem'     => (int)$sem,
+                'email'   => $email,
+                'phone'   => $phone,
+                'college' => $college,
+            ]);
+            $ok = ($supabase->last_status >= 200 && $supabase->last_status < 300);
+            $msg = $ok ? 'Registered Successfully!' : 'Already registered with this USN';
+            echo "<script>alert('$msg'); window.location.href='usn.php';</script>";
         } else {
             $INSERT = "INSERT INTO participent (usn,name,branch,sem,email,phone,college) VALUES('$usn','$name','$branch',$sem,'$email','$phone','$college')";
             if ($conn->query($INSERT) === True) {

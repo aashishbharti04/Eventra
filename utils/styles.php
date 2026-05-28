@@ -15,6 +15,14 @@
     // Apply theme before paint to avoid a flash.
     (function () {
         try {
+            // ?theme=dark|light overrides everything (useful for shareable links/screenshots)
+            var qs = new URLSearchParams(window.location.search);
+            var override = qs.get('theme');
+            if (override === 'dark' || override === 'light') {
+                if (override === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+                try { localStorage.setItem('eventra-theme', override); } catch (e) {}
+                return;
+            }
             var saved = localStorage.getItem('eventra-theme');
             if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
                 document.documentElement.setAttribute('data-theme', 'dark');

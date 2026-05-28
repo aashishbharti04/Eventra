@@ -3,21 +3,8 @@ $page = 'myevents';
 $usn  = $_POST['usn'] ?? '';
 
 include_once 'classes/db1.php';
-
-$rows = [];
-if (!$db_offline && $usn !== '') {
-    $usn_safe = mysqli_real_escape_string($conn, $usn);
-    $result   = @mysqli_query(
-        $conn,
-        "SELECT * FROM registered r,staff_coordinator s ,event_info ef ,student_coordinator st,events e
-         WHERE e.event_id = ef.event_id
-           AND e.event_id = s.event_id
-           AND e.event_id = st.event_id
-           AND r.usn = '$usn_safe'
-           AND r.event_id = e.event_id"
-    );
-    if ($result) { while ($r = mysqli_fetch_array($result)) { $rows[] = $r; } }
-}
+require_once 'classes/EventStore.php';
+$rows = EventStore::registeredFor($usn);
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -4,9 +4,10 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Local config / logs
+# Local config / logs — Supabase keys, MySQL creds etc.
 *.log
 *.local.php
+config/settings.local.php
 
 # PHP runtime
 *.cache

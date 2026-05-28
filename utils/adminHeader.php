@@ -26,6 +26,7 @@ $page = $page ?? '';
                 <li class="nav-item"><a class="nav-link <?php echo $page==='scoord'?'active':''; ?>" href="Stu_cordinator.php"><i class="bi bi-person-badge me-1"></i>Student Coord.</a></li>
                 <li class="nav-item"><a class="nav-link <?php echo $page==='stcoord'?'active':''; ?>" href="Staff_cordinator.php"><i class="bi bi-person-vcard me-1"></i>Staff Coord.</a></li>
                 <li class="nav-item"><a class="nav-link" href="createEventForm.php"><i class="bi bi-plus-circle me-1"></i>New Event</a></li>
+                <li class="nav-item"><a class="nav-link <?php echo $page==='settings'?'active':''; ?>" href="settings.php"><i class="bi bi-gear me-1"></i>Settings</a></li>
                 <li class="nav-item ms-lg-2"><a class="btn btn-app-ghost" href="index.php"><i class="bi bi-box-arrow-right"></i>Logout</a></li>
                 <li class="nav-item ms-lg-2">
                     <button class="theme-toggle" type="button" id="themeToggle" aria-label="Toggle dark mode">

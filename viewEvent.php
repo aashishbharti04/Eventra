@@ -1,6 +1,7 @@
 <?php
 $page = 'events';
 require 'classes/db1.php';
+require_once 'classes/EventStore.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
@@ -12,17 +13,7 @@ $cat_names = [
 ];
 $cat = $cat_names[$id] ?? ['name' => 'Events', 'sub' => 'Browse our active events.'];
 
-$result = null;
-if (!$db_offline) {
-    $result = mysqli_query(
-        $conn,
-        "SELECT * FROM events,event_info ef,student_coordinator s,staff_coordinator st
-         WHERE type_id = $id
-           AND ef.event_id = events.event_id
-           AND s.event_id  = events.event_id
-           AND st.event_id = events.event_id"
-    );
-}
+$rows = EventStore::eventsByCategory($id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,13 +40,13 @@ if (!$db_offline) {
             <?php echo db_offline_banner($db_last_error); ?>
 
             <div class="banner-info">
-                <b>Preview tip:</b> Even without a live database, the rest of the site (Home, About, Contact, login, register form) renders perfectly. Import <code>cems.sql</code> to see the real event cards here.
+                <b>Preview tip:</b> Even without a live database, the rest of the site (Home, About, Contact, login, register form) renders perfectly. Import <code>cems.sql</code> into MySQL, or paste <code>supabase_schema.sql</code> into Supabase and enable it on the <a href="settings.php">Settings page</a>.
             </div>
-        <?php elseif (mysqli_num_rows($result) === 0): ?>
+        <?php elseif (empty($rows)): ?>
             <div class="banner-info"><b>Nothing here yet.</b> No events found for this category. Check back soon!</div>
         <?php else: ?>
             <div class="row g-4">
-                <?php while ($row = mysqli_fetch_array($result)) {
+                <?php foreach ($rows as $row) {
                     $img    = trim($row['img_link']);
                     $title  = htmlspecialchars($row['event_title']);
                     $price  = (int)$row['event_price'];

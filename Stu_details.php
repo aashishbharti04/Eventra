@@ -1,11 +1,8 @@
 <?php
 $page = 'students';
 include_once 'classes/db1.php';
-$rows = [];
-if (!$db_offline) {
-    $result = @mysqli_query($conn, "SELECT * FROM events,registered r ,participent p WHERE events.event_id=r.event_id and r.usn = p.usn order by event_title");
-    if ($result) { while ($r = mysqli_fetch_array($result)) { $rows[] = $r; } }
-}
+require_once 'classes/EventStore.php';
+$rows = EventStore::allParticipantsWithEvents();
 ?>
 <!DOCTYPE html>
 <html lang="en">

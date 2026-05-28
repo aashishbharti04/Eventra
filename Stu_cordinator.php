@@ -1,11 +1,8 @@
 <?php
 $page = 'scoord';
 include_once 'classes/db1.php';
-$rows = [];
-if (!$db_offline) {
-    $result = @mysqli_query($conn, "SELECT * FROM student_coordinator s ,events e where e.event_id= s.event_id");
-    if ($result) { while ($r = mysqli_fetch_array($result)) { $rows[] = $r; } }
-}
+require_once 'classes/EventStore.php';
+$rows = EventStore::studentCoordinators();
 ?>
 <!DOCTYPE html>
 <html lang="en">

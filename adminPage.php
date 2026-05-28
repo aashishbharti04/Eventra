@@ -1,31 +1,10 @@
 <?php
 $page = 'dash';
 include_once 'classes/db1.php';
+require_once 'classes/EventStore.php';
 
-$counts = ['events' => 0, 'participants' => 0, 'staff' => 0, 'students' => 0];
-$rows   = [];
-
-if (!$db_offline) {
-    $r1 = @mysqli_query($conn, "SELECT COUNT(*) AS c FROM events");
-    $r2 = @mysqli_query($conn, "SELECT COUNT(*) AS c FROM participent");
-    $r3 = @mysqli_query($conn, "SELECT COUNT(*) AS c FROM staff_coordinator");
-    $r4 = @mysqli_query($conn, "SELECT COUNT(*) AS c FROM student_coordinator");
-    if ($r1) $counts['events']       = (int)mysqli_fetch_assoc($r1)['c'];
-    if ($r2) $counts['participants'] = (int)mysqli_fetch_assoc($r2)['c'];
-    if ($r3) $counts['staff']        = (int)mysqli_fetch_assoc($r3)['c'];
-    if ($r4) $counts['students']     = (int)mysqli_fetch_assoc($r4)['c'];
-
-    $result = @mysqli_query(
-        $conn,
-        "SELECT * FROM staff_coordinator s ,event_info ef ,student_coordinator st,events e
-         WHERE e.event_id = ef.event_id
-           AND e.event_id = s.event_id
-           AND e.event_id = st.event_id"
-    );
-    if ($result) {
-        while ($r = mysqli_fetch_array($result)) { $rows[] = $r; }
-    }
-}
+$counts = EventStore::counts();
+$rows   = EventStore::allEventsJoined();
 ?>
 <!DOCTYPE html>
 <html lang="en">

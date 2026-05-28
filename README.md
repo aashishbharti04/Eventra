@@ -14,7 +14,59 @@ A modern, **open-source** event management platform — discover events, registe
 [![Dark Mode](https://img.shields.io/badge/Dark%20Mode-Yes-0b1120?style=for-the-badge)](#-features)
 [![Made by Aashish](https://img.shields.io/badge/Made%20by-Aashish-f97316?style=for-the-badge)](#-owner--maintainer)
 
+<br>
+
+<img src="docs/screenshots/01-home-light.png" alt="Eventra homepage in light mode" width="100%">
+
 </div>
+
+---
+
+## 📸 Screenshots
+
+> A quick look at what you're getting. All screenshots are real captures from the live build — light + dark mode, mobile-responsive throughout.
+
+### Homepage — light & dark mode side by side
+
+| Light | Dark |
+|:---:|:---:|
+| ![Home light](docs/screenshots/01-home-light.png) | ![Home dark](docs/screenshots/02-home-dark.png) |
+
+The homepage features an asymmetric hero with a **live countdown timer** to the next event, KPI stats strip, image-rich category grid, featured-event highlight, testimonials, sponsor strip, and newsletter signup.
+
+### Inner pages
+
+| Gallery (masonry) | FAQ (accordion) |
+|:---:|:---:|
+| ![Gallery](docs/screenshots/03-gallery.png) | ![FAQ](docs/screenshots/04-faq.png) |
+
+| Sponsors (3-tier pricing) | About |
+|:---:|:---:|
+| ![Sponsors](docs/screenshots/05-sponsors.png) | ![About](docs/screenshots/06-about.png) |
+
+| Contact | Login |
+|:---:|:---:|
+| ![Contact](docs/screenshots/07-contact.png) | ![Login](docs/screenshots/08-login.png) |
+
+### Forms
+
+![Register](docs/screenshots/09-register.png)
+
+### Admin dashboard — light & dark
+
+| Light | Dark |
+|:---:|:---:|
+| ![Admin light](docs/screenshots/10-admin.png) | ![Admin dark](docs/screenshots/11-admin-dark.png) |
+
+### Admin Settings — paste Supabase keys, toggle backend, test connection
+
+| Light | Dark |
+|:---:|:---:|
+| ![Settings light](docs/screenshots/13-settings.png) | ![Settings dark](docs/screenshots/14-settings-dark.png) |
+
+### Bonus — sponsors page in dark mode
+
+![Sponsors dark](docs/screenshots/12-sponsors-dark.png)
 
 ---
 
@@ -28,6 +80,8 @@ If Eventra helps you land an A+, **a ⭐ on this repo is the only thanks I'll ev
 
 ## ✨ Features
 
+- **🗄️ Two-backend support** — local MySQL **or** Supabase (managed Postgres). Switch with a toggle on the admin Settings page. No code changes needed.
+- **🔑 Settings page** — paste your Supabase URL + anon key + service-role key from the admin UI. Saved to a gitignored file. Built-in **Test connection** button.
 - **Modern, polished UI** — purple + coral gradient theme, asymmetric hero, glassmorphism navbar
 - **🌙 Dark mode** — built-in toggle, remembers your choice, respects OS preference
 - **⏱️ Live countdown** to the next big event on the homepage
@@ -75,7 +129,17 @@ If Eventra helps you land an A+, **a ⭐ on this repo is the only thanks I'll ev
 php -S localhost:8000
 ```
 
-Open <http://localhost:8000>. Static pages render perfectly. Pages that need MySQL show a friendly "Database not connected" banner instead of a fatal error.
+Open <http://localhost:8000>. Static pages render perfectly. Pages that need a database show a friendly "Database not connected" banner instead of a fatal error.
+
+### Option C — Use Supabase (managed Postgres, no local DB install)
+
+1. Create a free project at <https://supabase.com>.
+2. Go to **SQL Editor → New query** and paste the entire contents of [`supabase_schema.sql`](supabase_schema.sql) → **Run**.
+3. Go to **Project Settings → API** and copy: Project URL, anon key, service-role key.
+4. In Eventra, open **Admin → Settings**, paste all three, flip the **Use Supabase** switch, **Save**, then **Test connection**.
+5. Done — every page (events, dashboard, registrations) now reads/writes against Supabase. The MySQL fallback stays available if you flip the switch back.
+
+> 🔒 **Security note:** the service-role key bypasses Supabase's Row-Level Security. It's fine for local dev and college-project demos; for a real production deployment, set it as an environment variable instead of saving it in a file.
 
 ---
 
